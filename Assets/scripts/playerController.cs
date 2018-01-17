@@ -10,41 +10,37 @@ public class playerController : physicObjects {
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
-    private void Awake()
-    {
+    private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 
-    protected override void ComputeVelocity ()
-    {
+    protected override void ComputeVelocity() {
         Vector2 move = Vector2.zero;
 
         move.x = Input.GetAxis("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && grounded)
-        {
+        if (Input.GetButtonDown("Jump") && grounded) {
             velocity.y = jumpTakeOffSpeed;
-        } else if (Input.GetButtonUp("Jump")) {
-            if (velocity.y > 0)
-            {
+        }
+        else if (Input.GetButtonUp("Jump")) {
+            if (velocity.y > 0) {
                 velocity.y = velocity.y * 0.5f;
             }
         }
 
-        if (Mathf.Abs(move.x) > 0)
-        {
-            if (move.x < 0)
-            {
+        if (Mathf.Abs(move.x) > 0) {
+            if (move.x < 0) {
                 spriteRenderer.flipX = true;
-            } else if (move.x > 0) {
+            }
+            else if (move.x > 0) {
                 spriteRenderer.flipX = false;
             }
         }
 
         animator.SetBool("grounded", grounded);
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
-               
+
         targetVelocity = move * maxSpeed;
-	} // end of overrided ComputeVelocity
+    } // end of overrided ComputeVelocity
 }

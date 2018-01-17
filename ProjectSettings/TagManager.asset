@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - gun
+  - player
+  - water
+  - goal
   layers:
   - Default
   - TransparentFX
@@ -14,10 +17,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - water
+  - ground
+  - goal
+  - player
   - 
   - 
   - 
