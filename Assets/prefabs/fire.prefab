@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4669958051494300}
   - component: {fileID: 198599838941446204}
   - component: {fileID: 199587541925681500}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire
   m_TagString: gun
   m_Icon: {fileID: 0}
@@ -2451,8 +2451,8 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 3
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -2595,7 +2595,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
